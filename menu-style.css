@@ -74,12 +74,14 @@ body {
 /* .container {
 } */
 
+
 .menu-mobile {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  width: 320px;
+  max-width: 320px;
+  height: 100vh;
   flex-direction: column;
   padding: 18px 0 32px 0;
   background-color: rgba(255, 255, 255, 1);
@@ -87,7 +89,20 @@ body {
   box-shadow: 
   -2px 0px 4px rgba(69, 79, 126, 0.02), 
   16px 0px 52px rgba(14, 24, 80, 0.2);
+  transform: translate();
+  overflow-y: auto;
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE / Edge */
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
 }
+
+/* Chrome / Safari */
+.menu-mobile::-webkit-scrollbar {
+  display: none;
+}
+
     .menu-mobile__header {
       margin-bottom: 46px;
     }
@@ -132,7 +147,7 @@ body {
     .menu-mobile__navigation {
       margin-bottom: 268px;
     }
-    
+
 		.menu-mobile__list {
       flex-direction: column;
 		}
